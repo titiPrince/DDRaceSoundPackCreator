@@ -31,5 +31,3 @@ namespace SoundPackCreator
         }
     }
 }
-
-// StartupUri = "MainWindow.xaml"
