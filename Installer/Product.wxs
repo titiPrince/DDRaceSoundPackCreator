@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define SoundPackCreator_TargetDir=$(var.SoundPackCreator.TargetDir)?>
+	<Product Id="1cf0cd40-318e-4ea2-8506-340d10f475e1" Name="DDrace Soundpack Creator" Language="1033" Version="1.0.0.0" Manufacturer="tiPrince" UpgradeCode="3d88e467-5a10-42f2-b065-b1098063e46f">
+		
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes"/>
+
+		<Feature Id="ProductFeature" Title="Installer" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="ProgramFilesFolder_files" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="DDSoundpackCreator" />
+			</Directory>
+		</Directory>
+	</Fragment>
+	<Fragment>
+		<ComponentGroup Id="ProgramFilesFolder_files" Directory="ProgramFilesFolder">
+			<Component Id="SoundPackCreator.exe" Guid="eefd425f-c6af-4c56-a4cf-15e57122cfbb"> 
+				<File Id="SoundPackCreator.exe" Name="SoundPackCreator.exe" Source="$(var.SoundPackCreator_TargetDir)SoundPackCreator.exe">
+					<Shortcut Id="StartMenuMain" Directory="ProgramMenuDir" Name="SoundPackCreator.exe" WorkingDirectory='INSTALLDIR' Advertise="yes" />
+					<Shortcut Id="DesktopMain" Directory="DesktopFolder" Name="SoundPackCreator.exe" WorkingDirectory='INSTALLDIR' Advertise="yes" />
+				</File>
+			</Component>
+			
+			<Component Id="SoundPackCreator.exe.config" Guid="6e2ae312-702f-4fdc-9023-f37b722a5989">
+				<File Id="SoundPackCreator.exe.config" Name="SoundPackCreator.exe.config" Source="$(var.SoundPackCreator_TargetDir)SoundPackCreator.exe.config" />
+			</Component>
+			
+			<Component Id="NAudio.Wasapi.dll" Guid="4bdbac26-0f12-42e0-9179-68e96706cd0f">
+				<File Id="NAudio.Wasapi.dll" Name="NAudio.Wasapi.dll" Source="$(var.SoundPackCreator_TargetDir)NAudio.Wasapi.dll" />
+			</Component>
+			
+			<Component Id="NAudio.Core.dll" Guid="8a607985-f5bd-41bc-9a7c-5d2924220971">
+				<File Id="NAudio.Core.dll" Name="NAudio.Core.dll" Source="$(var.SoundPackCreator_TargetDir)NAudio.Core.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

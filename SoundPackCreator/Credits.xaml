@@ -1,0 +1,13 @@
+﻿<Window x:Name="CreditsWindow" x:Class="SoundPackCreator.Credits"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoundPackCreator"
+        xmlns:tr="clr-namespace:SoundPackCreator.Properties"
+        mc:Ignorable="d"
+        Title="Credits" Height="225" Width="400" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Background="#FF383535">
+    <Grid>
+        <Label Content="{x:Static tr:localization.ui_label_credits_message}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="15,15,15,15" Foreground="White"/>
+    </Grid>
+</Window>

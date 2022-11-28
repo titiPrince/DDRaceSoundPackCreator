@@ -1,0 +1,198 @@
+﻿<Window x:Class="SoundPackCreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoundPackCreator"
+        xmlns:tr="clr-namespace:SoundPackCreator.Properties"
+        mc:Ignorable="d"
+        Name="Window" Title="DDrace SoundPack Creator" Height="360" Width="605" WindowStartupLocation="CenterScreen" Closing="Window_Closing" MinWidth="500" MinHeight="320" Background="#FF383535">
+    <Window.CommandBindings>
+        <CommandBinding x:Name="Bind_new" Command="New" Executed="Bind_new_Executed"/>
+        <CommandBinding x:Name="Bind_open" Command="Open" Executed="Bind_open_Executed"/>
+        <CommandBinding x:Name="Bind_save" Command="Save" Executed="Bind_save_Executed"/>
+        <CommandBinding x:Name="Bind_save_as" Command="SaveAs" Executed="Bind_save_as_Executed"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Control" Command="New"/>
+        <KeyBinding Key="O" Modifiers="Control" Command="Open"/>
+        <KeyBinding Key="S" Modifiers="Control" Command="Save"/>
+        <KeyBinding Key="S" Modifiers="Shift+Control" Command="SaveAs"/>
+    </Window.InputBindings>
+    
+    <Window.Resources>
+        <ControlTemplate x:Key="ddbutton" TargetType="Button">
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="subbackgroundElement" 
+                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                            To="#00000000"
+                            Duration="0:0:0.1"/>
+                                <ColorAnimation Storyboard.TargetName="subbackgroundElement" 
+                            Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" 
+                            To="#00000000" 
+                            Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState Name="MouseOver">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="subbackgroundElement" 
+                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" 
+                            To="#4fd69d00"
+                            Duration="0:0:0.1"/>
+                                <ColorAnimation Storyboard.TargetName="subbackgroundElement" 
+                            Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" 
+                            To="#ef9e7400" 
+                            Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Rectangle Fill="{TemplateBinding Background}" Stroke="#7f7f7f" />
+                <Rectangle Name="subbackgroundElement" Fill="#00000000" Stroke="#00000000" />
+                <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+        </ControlTemplate>
+        <Style x:Key="SliderRepeatButton" TargetType="RepeatButton">
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="IsTabStop" Value="false" />
+            <Setter Property="Focusable" Value="false" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RepeatButton">
+                        <Border Background="#000000" Height="5"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SliderRepeatButton1" TargetType="RepeatButton">
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RepeatButton">
+                        <Border SnapsToDevicePixels="True" Background="#d69d00" Height="5"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SliderThumb" TargetType="Thumb">
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Ellipse Height="13" Width="13" Fill="#FFF"></Ellipse>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <ControlTemplate x:Key="Slider"  TargetType="Slider">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Track Grid.Row="1" x:Name="PART_Track"   >
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton Style="{StaticResource SliderRepeatButton1}" Command="Slider.DecreaseLarge" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb Style="{StaticResource SliderThumb}"/>
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton Style="{StaticResource SliderRepeatButton}" Command="Slider.IncreaseLarge" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+            </Grid>
+        </ControlTemplate>
+
+        <Style x:Key="Horizontal_Slider" TargetType="Slider">
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="MinHeight" Value="21" />
+                    <Setter Property="MinWidth" Value="104" />
+                    <Setter Property="Template" Value="{StaticResource Slider}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <ControlTemplate x:Key="ddscrollbar" TargetType="ScrollBar">
+        </ControlTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="237*"/>
+            <ColumnDefinition Width="368*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.ColumnSpan="2" Height="18" VerticalAlignment="Top">
+            <Menu x:Name="Menu" DockPanel.Dock="Top">
+                <Menu.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Offset="0" Color="#FFADADAD" />
+                        <GradientStop Offset="1" Color="#FF8E8E8E" />
+                    </LinearGradientBrush>
+                </Menu.Background>
+                <MenuItem x:Name="MenuFile" Header="{x:Static tr:localization.ui_menu_file}" Height="18" TabIndex="0">
+                    <MenuItem x:Name="Menu_new" ToolTip="{x:Static tr:localization.ui_tooltip_menu_file_new}" Header="{x:Static tr:localization.ui_menu_file_new}" Click="Menu_new_Click" InputGestureText="Ctrl+N"/>
+                    <MenuItem x:Name="Menu_open" ToolTip="{x:Static tr:localization.ui_tooltip_menu_file_open}" Header="{x:Static tr:localization.ui_menu_file_open}" InputGestureText="Ctrl+O" Click="Menu_open_Click"/>
+                    <MenuItem x:Name="Menu_save" ToolTip="{x:Static tr:localization.ui_tooltip_menu_file_save}" Header="{x:Static tr:localization.ui_menu_file_save}" Click="Menu_save_Click" InputGestureText="Ctrl+S"/>
+                    <MenuItem x:Name="Menu_save_as" ToolTip="{x:Static tr:localization.ui_tooltip_menu_file_save_as}" Header="{x:Static tr:localization.ui_menu_file_save_as}" Click="Menu_save_as_Click" InputGestureText="Ctrl+Shift+S"/>
+                    <Separator/>
+                    <MenuItem x:Name="Menu_quit" ToolTip="{x:Static tr:localization.ui_tooltip_menu_file_quit}" Header="{x:Static tr:localization.ui_menu_file_quit}" InputGestureText="Alt+F4" Click="Menu_quit_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="MenuInstall" Header="{x:Static tr:localization.ui_menu_install}" Height="18" TabIndex="1">
+                    <MenuItem ToolTip="{x:Static tr:localization.ui_tooltip_menu_install_current}" x:Name="Menu_install_current" Header="{x:Static tr:localization.ui_menu_install_current}" Click="Menu_install_current_Click"/>
+                    <MenuItem ToolTip="{x:Static tr:localization.ui_tooltip_menu_install_open_install}" x:Name="Menu_open_install" Header="{x:Static tr:localization.ui_menu_install_open_install}" Click="Menu_open_install_Click"/>
+                    <Separator/>
+                    <MenuItem ToolTip="{x:Static tr:localization.ui_tooltip_menu_install_default}" x:Name="Menu_install_default" Header="{x:Static tr:localization.ui_menu_install_default}" Click="Menu_install_default_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="MenuHelp" Header="{x:Static tr:localization.ui_menu_help}" Height="18" TabIndex="1">
+                    <MenuItem x:Name="Menu_help_credits" Header="{x:Static tr:localization.ui_menu_help_credits}" Click="Menu_help_credits_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <ListBox ItemContainerStyle="{DynamicResource _ListBoxItemStyle}" x:Name="SoundsList" ItemsSource="{Binding GameSounds}" Margin="10,29,3,10" IsSynchronizedWithCurrentItem="False" MouseLeftButtonUp="SoundsList_SelectionChanged" TabIndex="2" Background="#FF211E1E" Foreground="White" BorderBrush="#00ABADB3">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="2" Background="{Binding Edited}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Name}" Grid.Column="1" VerticalAlignment="Center" FontWeight="Bold" FontSize="12" HorizontalAlignment="Stretch" Margin="0,0,5,0"/>
+                        <Button Template="{StaticResource ddbutton}" Content="⏵" Click="Sound_play_button_Click" DataContext="{Binding Name}" Width="20" Height="20" Margin="0, 0, 5, 0"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <GroupBox x:Name="New_sound_group" Header="{x:Static tr:localization.ui_label_new_sound}" Margin="10,29,15,0" Height="100" VerticalAlignment="Top" Grid.Column="1" BorderThickness="0,0,0,0" Background="#FF211E1E" Foreground="White">
+            <Grid>
+                <Slider Style="{StaticResource Horizontal_Slider}" Name="New_sound_slider" Margin="65,0,15,10" VerticalAlignment="Bottom" Height="23" RenderTransformOrigin="0.5,0.5" TickFrequency="1" LostMouseCapture="New_sound_slider_LostMouseCapture" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0,2,0,0"/>
+                <Button Template="{StaticResource ddbutton}" ToolTip="{x:Static tr:localization.ui_tooltip_button_select_sound}" Name="New_sound_open_sound_button" Content="..." VerticalAlignment="Bottom" Height="23" Width="20" Margin="10,0,0,10" HorizontalAlignment="Left" AllowDrop="True" Click="New_sound_open_sound_button_Click" IsEnabled="False" TabIndex="4" Background="#FFDDDDDD"/>
+                <Button Template="{StaticResource ddbutton}" ToolTip="{x:Static tr:localization.ui_tooltip_button_play_sound}" Name="New_sound_play_button" Content="⏵" Margin="35,0,0,10" VerticalAlignment="Bottom" Height="23" Width="25" HorizontalAlignment="Left" Click="New_sound_play_button_Click" IsEnabled="False" TabIndex="5"/>
+                <Label ToolTip="" Name="New_sound_name" Content="" Margin="15,10,40,38" FontFamily="Consolas" AutomationProperties.HelpText="Test" AutomationProperties.ItemStatus="wow" AutomationProperties.ItemType="edfg" Foreground="White"/>
+                <Button Template="{StaticResource ddbutton}" ToolTip="{x:Static tr:localization.ui_tooltip_button_delete_sound}" Name="New_sound_close_sound_button" Content="X" HorizontalAlignment="Right" Margin="0,15,15,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="20" Height="20" IsEnabled="False" Click="New_sound_close_sound_button_Click" TabIndex="3"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="InformationsGroup" BorderThickness="0,0,0,0" Grid.Column="1" Header="{x:Static tr:localization.ui_label_informations}" Margin="10,134,15,10" Background="#FF211E1E" Foreground="White">
+            <Grid>
+                <Label Content="{x:Static tr:localization.ui_label_description}" HorizontalAlignment="Left" Margin="11,59,0,0" Height="26" VerticalAlignment="Top" Width="309" Foreground="White"/>
+                <TextBox x:Name="Description_input" Margin="10,85,10,10" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" MaxLength="16384" MaxLines="100" TabIndex="8" SelectionBrush="#FFD7BB00" Foreground="White" Background="#FF302D2D" TextChanged="Description_input_TextChanged"/>
+                <TextBox x:Name="Author_input" Margin="10,36,0,0" TextWrapping="Wrap" Height="18" VerticalAlignment="Top" MaxLength="15" MaxLines="1" TextChanged="Author_input_TextChanged" TabIndex="7" HorizontalAlignment="Left" Width="156" SelectionBrush="#FFD7BB00" Background="#FF302D2D" Foreground="White"/>
+                <Label Content="{x:Static tr:localization.ui_label_author}" HorizontalAlignment="Left" Margin="11,10,0,0" Width="155" Height="26" VerticalAlignment="Top" Foreground="White"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

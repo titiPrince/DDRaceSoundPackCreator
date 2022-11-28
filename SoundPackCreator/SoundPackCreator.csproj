@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76184264-0FCC-427D-AB8F-1BBEF3FFF94A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SoundPackCreator</RootNamespace>
+    <AssemblyName>DDPackCreator</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Evan3\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://google.com/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>42496A2A0BFE16D634C9D3E86D10E05F2BB5A302</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SoundPackCreator.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>DDPackCreatorIco.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.2.1.0\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Asio.2.1.0\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Core.2.1.0\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Midi.2.1.0\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wasapi.2.1.0\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinForms.2.1.0\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinMM.2.1.0\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.5.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AudioConverter.cs" />
+    <Compile Include="Credits.xaml.cs">
+      <DependentUpon>Credits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\localization.pt.Designer.cs">
+      <DependentUpon>localization.pt.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\localization.uk.Designer.cs">
+      <DependentUpon>localization.uk.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\localization.Designer.cs">
+      <DependentUpon>localization.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\localization.de.Designer.cs">
+      <DependentUpon>localization.de.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\localization.zh.Designer.cs">
+      <DependentUpon>localization.zh.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\localization.ru.Designer.cs">
+      <DependentUpon>localization.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\localization.en.Designer.cs">
+      <DependentUpon>localization.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\localization.en-US.Designer.cs">
+      <DependentUpon>localization.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\localization.fr.Designer.cs">
+      <DependentUpon>localization.fr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\localization.fr-FR.Designer.cs">
+      <DependentUpon>localization.fr-FR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PackInstaller.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectGameWindow.xaml.cs">
+      <DependentUpon>SelectGameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wavpack.cs" />
+    <Page Include="Credits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Default_sounds1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Default_sounds.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SelectGameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Default_sounds.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Default_sounds1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\localization.pt.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localization.pt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\localization.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localization.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\localization.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localization.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\localization.zh.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localization.zh.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\localization.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localization.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\localization.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localization.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\localization.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localization.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\localization.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\localization.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localization.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\localization.fr-FR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localization.fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Default.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_body_impact-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_body_impact-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_body_impact-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_body_splat-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_body_splat-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_body_splat-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_body_splat-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_dbljump-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_dbljump-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_dbljump-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_foot_left-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_foot_left-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_foot_left-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_foot_left-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_foot_right-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_foot_right-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_foot_right-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_foot_right-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_land-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_land-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_land-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foley_land-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hook_attach-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hook_attach-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hook_attach-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hook_loop-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hook_loop-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hook_noattach-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hook_noattach-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hook_noattach-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_menu.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_ctf_cap_pl.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_ctf_drop.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_ctf_grab_en.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_ctf_grab_pl.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_ctf_rtn.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_hit_strong-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_hit_strong-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_hit_weak-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_hit_weak-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_hit_weak-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_msg-client.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_msg-highlight.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_msg-server.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_pickup_arm-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_pickup_arm-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_pickup_arm-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_pickup_arm-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_pickup_gun.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_pickup_hrt-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_pickup_hrt-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_pickup_launcher.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_pickup_ninja.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_pickup_sg.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_skid-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_skid-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_skid-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_skid-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_spawn_wpn-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_spawn_wpn-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfx_spawn_wpn-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_cry-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_cry-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_ninja-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_ninja-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_ninja-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_ninja-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_long-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_long-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-08.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-09.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_pain_short-12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_sledge-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_sledge-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_sledge-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_spawn-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_spawn-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_spawn-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_spawn-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_spawn-05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_spawn-06.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vo_teefault_spawn-07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_flump_explo-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_flump_explo-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_flump_explo-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_flump_launch-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_flump_launch-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_flump_launch-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_gun_fire-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_gun_fire-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_gun_fire-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_hammer_hit-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_hammer_hit-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_hammer_hit-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_hammer_swing-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_hammer_swing-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_hammer_swing-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_laser_bnce-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_laser_bnce-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_laser_bnce-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_laser_fire-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_laser_fire-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_laser_fire-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_ninja_attack-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_ninja_attack-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_ninja_attack-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_ninja_attack-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_ninja_hit-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_ninja_hit-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_ninja_hit-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_ninja_hit-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_noammo-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_noammo-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_noammo-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_noammo-04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_noammo-05.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_shotty_fire-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_shotty_fire-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_shotty_fire-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_switch-01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_switch-02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp_switch-03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wavpack.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wvunpack.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wavpack license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DDPackCreatorIco.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

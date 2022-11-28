@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="dialog_error_install_default_error-occured_message" xml:space="preserve">
+    <value>安装过程中发生了错误。</value>
+  </data>
+  <data name="dialog_error_install_default_error-occured_title" xml:space="preserve">
+    <value>默认包的安装错误</value>
+  </data>
+  <data name="dialog_error_install_pack-not-exists_message" xml:space="preserve">
+    <value>声音包不存在。</value>
+  </data>
+  <data name="dialog_error_install_pack-not-exists_title" xml:space="preserve">
+    <value>安装错误</value>
+  </data>
+  <data name="dialog_error_open_selected-pack-corrupted_message" xml:space="preserve">
+    <value>选择的包文件已损坏或不正确。</value>
+  </data>
+  <data name="dialog_error_open_selected-pack-corrupted_title" xml:space="preserve">
+    <value>打开软件包错误</value>
+  </data>
+  <data name="dialog_error_open_selected-pack-not-exists_message" xml:space="preserve">
+    <value>选择的包文件不存在。</value>
+  </data>
+  <data name="dialog_error_open_selected-pack-not-exists_title" xml:space="preserve">
+    <value>打开包的错误</value>
+  </data>
+  <data name="dialog_error_save_message" xml:space="preserve">
+    <value>在保存过程中发生了一个错误。请尝试改变文件的路径或以管理员权限执行此应用程序。</value>
+  </data>
+  <data name="dialog_error_save_title" xml:space="preserve">
+    <value>保存错误</value>
+  </data>
+  <data name="dialog_question_select-game_message" xml:space="preserve">
+    <value>警告：如果你按下 "是"，你的游戏将重新启动 你想在这个游戏上安装声音包吗：位置。</value>
+  </data>
+  <data name="dialog_question_select-game_title" xml:space="preserve">
+    <value>选择这个游戏？</value>
+  </data>
+  <data name="dialog_select_save-pack_title" xml:space="preserve">
+    <value>保存声音包</value>
+  </data>
+  <data name="dialog_warning_install_need-save-before_message1" xml:space="preserve">
+    <value>要安装这个当前的声音包，你需要先保存它。</value>
+  </data>
+  <data name="dialog_warning_install_need-save-before_title1" xml:space="preserve">
+    <value>保存之前</value>
+  </data>
+  <data name="dialog_warning_pack-not-saved_message1" xml:space="preserve">
+    <value>当前的声音包还没有保存，你想现在保存吗？</value>
+  </data>
+  <data name="dialog_warning_pack-not-saved_title1" xml:space="preserve">
+    <value>保存声音包</value>
+  </data>
+  <data name="ui_button_detect-game_select" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="ui_label_author" xml:space="preserve">
+    <value>作者</value>
+  </data>
+  <data name="ui_label_description" xml:space="preserve">
+    <value>描写</value>
+  </data>
+  <data name="ui_label_detect-game_select" xml:space="preserve">
+    <value>请启动你的游戏，它将被自动检测。
+如果你的游戏没有被检测到，点击 "选择"
+按钮，然后选择你的游戏的".exe"文件。</value>
+  </data>
+  <data name="ui_label_informations" xml:space="preserve">
+    <value>音效包的信息</value>
+  </data>
+  <data name="ui_label_new-sound" xml:space="preserve">
+    <value>替换</value>
+  </data>
+  <data name="ui_menu_file" xml:space="preserve">
+    <value>文件</value>
+  </data>
+  <data name="ui_menu_file_new" xml:space="preserve">
+    <value>新文件</value>
+  </data>
+  <data name="ui_menu_file_open" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="ui_menu_file_quit" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="ui_menu_file_save" xml:space="preserve">
+    <value>保存为</value>
+  </data>
+  <data name="ui_menu_file_save-as" xml:space="preserve">
+    <value>保存为</value>
+  </data>
+  <data name="ui_menu_help" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="ui_menu_help_credits" xml:space="preserve">
+    <value>奖励</value>
+  </data>
+  <data name="ui_menu_install" xml:space="preserve">
+    <value>安装</value>
+  </data>
+  <data name="ui_menu_install-current" xml:space="preserve">
+    <value>安装当前版本</value>
+  </data>
+  <data name="ui_menu_install-default" xml:space="preserve">
+    <value>恢复默认</value>
+  </data>
+  <data name="ui_menu_install_open-install" xml:space="preserve">
+    <value>打开并安装</value>
+  </data>
+  <data name="ui_tooltip_button_delete-sound" xml:space="preserve">
+    <value>从声音包中删除这个声音</value>
+  </data>
+  <data name="ui_tooltip_button_play-sound" xml:space="preserve">
+    <value>听听你的美丽声音</value>
+  </data>
+  <data name="ui_tooltip_button_select-sound" xml:space="preserve">
+    <value>从你的存储器中选择一个声音文件</value>
+  </data>
+  <data name="ui_tooltip_menu_file_new" xml:space="preserve">
+    <value>创建一个新的声音包，将重置一切</value>
+  </data>
+  <data name="ui_tooltip_menu_file_open" xml:space="preserve">
+    <value>从你的存储器中打开一个声音包</value>
+  </data>
+  <data name="ui_tooltip_menu_file_quit" xml:space="preserve">
+    <value>退出这个程序，或者你可以点击红叉，如你所愿</value>
+  </data>
+  <data name="ui_tooltip_menu_file_save" xml:space="preserve">
+    <value>保存当前的声音包</value>
+  </data>
+  <data name="ui_tooltip_menu_file_save-as" xml:space="preserve">
+    <value>在一个新的特定文件中保存当前的声音包</value>
+  </data>
+  <data name="ui_tooltip_menu_install" xml:space="preserve">
+    <value>安装</value>
+  </data>
+  <data name="ui_tooltip_menu_install-current" xml:space="preserve">
+    <value>安装当前在你的游戏中打开的声音包</value>
+  </data>
+  <data name="ui_tooltip_menu_install-default" xml:space="preserve">
+    <value>恢复游戏中的默认声音包</value>
+  </data>
+  <data name="ui_tooltip_menu_install_open-install" xml:space="preserve">
+    <value>从你的存储器中打开一个声音包并安装它</value>
+  </data>
+</root>
